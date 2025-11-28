@@ -1,0 +1,22 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE (VS Code, PHPStorm, etc.)
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencias (Si usas Composer para librerías PHP o NPM para scripts)
+/vendor/
+/node_modules/
+
+# Archivos de compilación (si usas SASS/JS, aunque sea un API theme)
+/dist/
+*.log
+
+# Seguridad y configuración local (MUY IMPORTANTE para APIs)
+.env
+config.local.php
+auth.json
