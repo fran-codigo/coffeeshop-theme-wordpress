@@ -19,7 +19,7 @@ a la API REST de WordPress */
 function coffee_shop_api_init()
 {
     register_rest_field(
-        ['page'],
+        ['page', 'post'],
         'featured_images',
         ['get_callback' => 'get_featured_image']
     );
