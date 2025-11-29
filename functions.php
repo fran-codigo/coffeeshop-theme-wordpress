@@ -1,5 +1,11 @@
 <?php
 
+/* Filtro de ACF para usar el formato estándar en la API REST,
+ mostrar la image como url */
+add_filter('acf/settings/rest_api_format', function () {
+    return 'standard';
+});
+
 function coffee_shop_setup()
 {
     // Agregar imagen destacada
