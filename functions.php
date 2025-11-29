@@ -23,6 +23,12 @@ function coffee_shop_api_init()
         'featured_images',
         ['get_callback' => 'get_featured_image']
     );
+
+    register_rest_field(
+        ['post'],
+        'category_details',
+        ['get_callback' => 'get_post_categories']
+    );
 }
 
 add_action('rest_api_init', 'coffee_shop_api_init');
@@ -51,4 +57,19 @@ function get_featured_image($post)
         ];
     }
     return $images;
+}
+
+// Función para obtener las categorías de un post
+function get_post_categories($post)
+{
+    return array_map(
+        function ($category_id) {
+            $cat = get_category($category_id, 'ARRAY_A');
+            return [
+                'name' => $cat['name'],
+                'slug' => $cat['slug'],
+            ];
+        },
+        $post['categories']
+    );
 }
